@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <remove name="catalog.topnav" />
+        <reference name="head">
+            <action method="addCss">
+                <name>css/mageprofis/megamenu.css</name>
+            </action>
+        </reference>
+        <reference name="top.menu">
+            <block type="megamenu/menu" name="catalog.topnav.menu" as="topMenu" template="mageprofis/megamenu/topmenu.phtml"/>
+        </reference>
+    </default>
+    <megamenu_menu_subcategories>
+        <block type="megamenu/menu" name="subcategories" output="toHtml" template="mageprofis/megamenu/subcategories.phtml" />
+    </megamenu_menu_subcategories>
+</layout>

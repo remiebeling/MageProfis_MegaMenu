@@ -1,0 +1,67 @@
+.menu-container .menu-toggle {
+    display:none;
+}
+.menu-wrap {
+    width:100%;
+    margin:20px 0;
+}
+#megamenu {
+    margin:0;
+    display:table-row;
+}
+li.level0 {
+    display:block;
+    text-align: center;
+    position:relative;
+    border-left:1px solid #ccc;
+    float:left;
+}
+li.level0:last-child {
+    border-right:1px solid #ccc;   
+}
+li.level0 > a {
+    display:block;
+    width:100%;
+    height:100%;
+    padding:8px 32px;
+}
+li.level0 .submenu  {
+    display:none;
+    position:absolute;
+    text-align: left;
+    background:#fff;
+    padding:16px;
+    z-index:5000;
+}
+li.level0 > .submenu {
+    min-width:120%;
+}
+li.level0:hover > .submenu {
+    display:block;
+}
+
+li.level0:hover > .submenu {
+    display:block;
+}
+li.level0 > .submenu .subcat-wrap {
+    margin-bottom:8px;
+}
+li.level0 > .submenu ul li a {
+    display:block;
+    width:100%;
+    height:100%;
+    padding:8px;
+}
+li.level0 > .submenu .subcat-wrap {
+    position:relative;
+}
+li.level0 > .submenu .subcat-wrap > .submenu {
+    position:absolute;
+    left:100%;
+    top:-16px;
+    background:#fff;
+    display:none;
+}
+li.level0 > .submenu .subcat-wrap:hover > .submenu {
+    display:block;
+}

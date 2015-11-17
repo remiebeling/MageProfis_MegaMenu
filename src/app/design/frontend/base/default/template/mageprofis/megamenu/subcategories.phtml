@@ -1,0 +1,31 @@
+<?php /*@var this MageProfis_MegaMenu_Block_Menu */?>
+<?php $_parent_category = $this->getParentCategory(); ?>
+<?php $subcategories = $this->getSubCategories($_parent_category); ?>
+<?php if ($subcategories->count() > 0): ?>
+    <div class="subcats clearfix">
+        <?php $subcatcount = count($subcategories); ?>
+        <?php foreach ($subcategories as $_subcat): ?>
+            <div class="subcat-wrap">
+                <a href="<?php echo $_subcat->getUrl(); ?>" class="submenu-title" title="<?php echo $_subcat->getName(); ?>">
+                    <?php echo $_subcat->getName(); ?>
+                </a>                        
+                <?php $_subcats = $this->getSubCategories($_subcat); ?>
+                <?php if (count($_subcats) > 0): ?>
+                    <ul class="submenu">
+                        <?php $i = 0; ?>
+                        <?php foreach ($_subcats as $cat): ?>
+                            <li class="level1">
+                                <a href="<?php echo $cat->getUrl() ?>"><?php echo $cat->getName() ?></a>
+                            </li>
+                            <?php $i++; ?>
+                            <?php if ($i == 3): ?>
+                                <li class="show-all"><a href="<?php echo $_subcat->getUrl(); ?>"><?php echo $this->__('show all') ?>></a></li>                                
+                                    <?php break; ?>
+                                <?php endif; ?>    
+                            <?php endforeach; ?>    
+                    </ul>
+                <?php endif; ?>    
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>

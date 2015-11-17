@@ -1,0 +1,11 @@
+<config>
+   <modules>
+      <MageProfis_MegaMenu>
+         <active>true</active>
+         <codePool>local</codePool>
+         <depends>
+            <Mage_Page/>
+         </depends>
+      </MageProfis_MegaMenu>
+   </modules>
+</config>

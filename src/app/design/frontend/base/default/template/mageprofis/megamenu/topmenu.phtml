@@ -1,0 +1,42 @@
+<?php $all_categories = $this->getCategories(); ?>
+<?php $main_categories = $this->getCategories()->addAttributeToFilter('level', '2'); ?>
+<div class="container menu-container">
+    <div class="menu-toggle"><?php echo $this->__('menu'); ?></div>
+    <ul id="megamenu">
+        <?php $i = 0; ?>
+        <?php $cat_count = count($all_categories); ?>
+        <?php foreach ($main_categories as $_category): ?>
+            <?php $settings = $this->setParentSettingsArray($_category); ?>
+            <li class="level0 level-top <?php if ($_category->getChildrenCount() > 0): ?> parent<?php endif; ?>  <?php echo $this->getCategoryState($_category) ?>" data-id="<?php echo $_category->getId() ?>">
+                <a href="<?php echo $_category->getUrl() ?>">
+                    <span><?php echo $_category->getName() ?></span>
+                </a>
+                <?php if ($_category->getChildrenCount() > 0): ?>
+                    <div class="submenu"></div>
+                <?php endif; ?>
+            </li>
+            <?php $i++; ?>
+        <?php endforeach; ?>    
+    </ul>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('li.level0').each(function () {
+                var target = jQuery(this).find('.submenu');
+                if (target.is(':empty')) {
+                    jQuery.post("<?php echo Mage::getUrl('dropdown/menu/subcategories') ?>", {id: jQuery(this).attr('data-id')}, function (data) {
+                        jQuery(target).html(data).addClass('has-content');
+                        if (data == "") {
+                            target.hide();
+                        }
+                    });
+                }
+
+            });
+            jQuery('.menu-toggle').click(function () {
+                jQuery('.menu-wrap').toggle('fast');
+            });
+        });
+    </script>
+</div>
+
+
