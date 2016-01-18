@@ -1,0 +1,15 @@
+{
+   "name": "mageprofis/megamenu",
+   "type": "magento-module",
+   "license": "GPL-3.0",
+   "description": "Replaces the default topmenu. Submenus are loaded via ajax.",
+   "homepage": "https://github.com/remiebeling/MageProfis_MegaMenu",
+   "authors":[
+        {
+            "name":"Remi Ebeling"
+        }
+    ],
+   "require": {
+      "magento-hackathon/magento-composer-installer": "*"
+   }
+}
