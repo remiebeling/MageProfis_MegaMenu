@@ -11,20 +11,29 @@
                 <class>MageProfis_MegaMenu_Block</class>
             </megamenu>
         </blocks>
+        <models>
+            <megamenu>
+                <class>MageProfis_MegaMenu_Model</class>
+            </megamenu>
+        </models>
         <helpers>
             <megamenu>
                 <class>MageProfis_MegaMenu_Helper</class>
             </megamenu>
         </helpers>
+        <events>
+            <core_layout_update_updates_get_after>
+                <observers>
+                    <mageprofis_megamenu_add_layout_updates>
+                        <type>singleton</type>
+                        <class>megamenu/observer</class>
+                        <method>addLayoutXml</method>
+                    </mageprofis_megamenu_add_layout_updates>
+                </observers>
+            </core_layout_update_updates_get_after>
+        </events>
     </global>
     <frontend>
-        <layout>
-            <updates>
-                <megamenu>
-                    <file>mageprofis-megamenu.xml</file>
-                </megamenu>
-            </updates>
-        </layout>
         <routers>
             <megamenu>
                 <use>standard</use>
