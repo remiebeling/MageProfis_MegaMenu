@@ -1,7 +1,8 @@
 <?php $all_categories = $this->getCategories(); ?>
 <?php $main_categories = $this->getCategories()->addAttributeToFilter('level', '2'); ?>
 <div class="container menu-container">
-    <div class="menu-toggle"><?php echo $this->__('menu'); ?></div>
+    <label id="megamenu-mobile-toggle" for="megamenu-mobile"><?php echo $this->__('Menu'); ?></label>
+    <input id="megamenu-mobile" type="checkbox" />
     <ul id="megamenu">
         <?php $i = 0; ?>
         <?php $cat_count = count($all_categories); ?>
@@ -30,13 +31,14 @@
                         }
                     });
                 }
-
             });
-            jQuery('.menu-toggle').click(function () {
-                jQuery('.menu-wrap').toggle('fast');
+            
+            jQuery( "#megamenu" ).on( "click", ".level0.parent > a", function(e) {
+                if(jQuery("#megamenu-mobile").is(':checked') && jQuery('#megamenu-mobile-toggle').is(':visible')){
+                    e.preventDefault();
+                    jQuery(this).parents('.level0').toggleClass('submenu-open');
+                }
             });
         });
     </script>
 </div>
-
-
