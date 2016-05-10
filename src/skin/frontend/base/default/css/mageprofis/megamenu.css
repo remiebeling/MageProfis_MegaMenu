@@ -1,67 +1,120 @@
-.menu-container .menu-toggle {
-    display:none;
+#megamenu-mobile-toggle {
+  display: none;
+  background-color: rgba(255, 255, 255, 0.63);
+  padding: 5px 10px;
 }
-.menu-wrap {
-    width:100%;
-    margin:20px 0;
+@media (max-width: 760px) {
+  #megamenu-mobile-toggle {
+    display: inline-block;
+  }
 }
-#megamenu {
-    margin:0;
-    display:table-row;
+/* Mobile - #megamenu-mobile:checked + #megamenu */
+#megamenu-mobile {
+  position: absolute;
+  left: -999999px;
+  top: -9999999px;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
 }
-li.level0 {
-    display:block;
-    text-align: center;
-    position:relative;
-    border-left:1px solid #ccc;
-    float:left;
-}
-li.level0:last-child {
-    border-right:1px solid #ccc;   
-}
-li.level0 > a {
-    display:block;
-    width:100%;
-    height:100%;
-    padding:8px 32px;
-}
-li.level0 .submenu  {
-    display:none;
-    position:absolute;
+@media (max-width: 760px) {
+  #megamenu-mobile:checked + #megamenu {
+    display: block;
+    /* li.level0 */
+    /* li.level0 */
+  }
+  #megamenu-mobile:checked + #megamenu li.level0 {
+    width: 100%;
     text-align: left;
-    background:#fff;
-    padding:16px;
-    z-index:5000;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #cccccc;
+  }
+  #megamenu-mobile:checked + #megamenu li.level0:last-child {
+    border-bottom: none;
+  }
+  #megamenu-mobile:checked + #megamenu li.level0 > .submenu {
+    display: none;
+    min-width: 100%;
+  }
+  #megamenu-mobile:checked + #megamenu li.level0 > .submenu .subcat-wrap.hide-on-desktop {
+    display: block;
+  }
+  #megamenu-mobile:checked + #megamenu li.level0.submenu-open > .submenu {
+    position: relative;
+    display: block;
+  }
 }
-li.level0 > .submenu {
-    min-width:120%;
+/* Mobile - #megamenu-mobile:checked + #megamenu */
+/* Desktop - #megamenu */
+#megamenu {
+  margin: 0;
+  display: table-row;
+  /* li.level0 */
+  /* li.level0 */
 }
-li.level0:hover > .submenu {
-    display:block;
+@media (max-width: 760px) {
+  #megamenu {
+    display: none;
+  }
 }
-
-li.level0:hover > .submenu {
-    display:block;
+#megamenu li.level0 {
+  display: block;
+  text-align: center;
+  position: relative;
+  border-left: 1px solid #cccccc;
+  float: left;
+  /* > .submenu */
+  /* > .submenu */
 }
-li.level0 > .submenu .subcat-wrap {
-    margin-bottom:8px;
+#megamenu li.level0:last-child {
+  border-right: 1px solid #cccccc;
 }
-li.level0 > .submenu ul li a {
-    display:block;
-    width:100%;
-    height:100%;
-    padding:8px;
+#megamenu li.level0 > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 8px 32px;
 }
-li.level0 > .submenu .subcat-wrap {
-    position:relative;
+#megamenu li.level0 .submenu {
+  display: none;
+  position: absolute;
+  text-align: left;
+  background: #ffffff;
+  padding: 16px;
+  z-index: 5000;
 }
-li.level0 > .submenu .subcat-wrap > .submenu {
-    position:absolute;
-    left:100%;
-    top:-16px;
-    background:#fff;
-    display:none;
+#megamenu li.level0 > .submenu {
+  min-width: 120%;
 }
-li.level0 > .submenu .subcat-wrap:hover > .submenu {
-    display:block;
+#megamenu li.level0 > .submenu .subcat-wrap {
+  margin-bottom: 8px;
+  position: relative;
 }
+#megamenu li.level0 > .submenu .subcat-wrap:last-child {
+  margin-bottom: 0;
+}
+#megamenu li.level0 > .submenu .subcat-wrap.hide-on-desktop {
+  display: none;
+}
+#megamenu li.level0 > .submenu .subcat-wrap > .submenu {
+  position: absolute;
+  left: 100%;
+  top: -16px;
+  background: #ffffff;
+  display: none;
+}
+#megamenu li.level0 > .submenu ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+}
+#megamenu li.level0 > .submenu .subcat-wrap:hover > .submenu {
+  display: block;
+}
+#megamenu li.level0:hover > .submenu {
+  display: block;
+}
+/* Desktop - #megamenu */

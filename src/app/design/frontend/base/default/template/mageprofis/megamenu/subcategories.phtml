@@ -3,6 +3,11 @@
 <?php $subcategories = $this->getSubCategories($_parent_category); ?>
 <?php if ($subcategories->count() > 0): ?>
     <div class="subcats clearfix">
+        <div class="subcat-wrap hide-on-desktop">
+            <a href="<?php echo $_parent_category->getUrl(); ?>" class="submenu-title" title="<?php echo $_parent_category->getName(); ?>">
+                <?php echo $_parent_category->getName(); ?>
+            </a>    
+        </div>
         <?php $subcatcount = count($subcategories); ?>
         <?php foreach ($subcategories as $_subcat): ?>
             <div class="subcat-wrap">
