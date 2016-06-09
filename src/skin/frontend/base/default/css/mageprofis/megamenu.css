@@ -77,6 +77,9 @@
   height: 100%;
   padding: 8px 32px;
 }
+#megamenu li.level0.active > a {
+  text-decoration: underline;
+}
 #megamenu li.level0 .submenu {
   display: none;
   position: absolute;

@@ -8,10 +8,10 @@
             </action>
         </reference>
         <reference name="top.menu">
-            <block type="megamenu/menu" name="catalog.topnav.menu" as="topMenu" template="mageprofis/megamenu/topmenu.phtml"/>
+            <block type="megamenu/topmenu" name="catalog.topnav.menu" as="topMenu" template="mageprofis/megamenu/topmenu.phtml"/>
         </reference>
     </default>
     <megamenu_menu_subcategories>
-        <block type="megamenu/menu" name="subcategories" output="toHtml" template="mageprofis/megamenu/subcategories.phtml" />
+        <block type="megamenu/text_list" name="subcategories" output="toHtml" />
     </megamenu_menu_subcategories>
 </layout>
