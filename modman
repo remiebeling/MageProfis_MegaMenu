@@ -1,6 +1,5 @@
 src/app/code/local/MageProfis/MegaMenu/                                         app/code/local/MageProfis/MegaMenu/
-src/app/design/frontend/base/default/layout/mageprofis-megamenu.xml		app/design/frontend/base/default/layout/mageprofis-megamenu.xml
-src/app/design/frontend/base/default/template/mageprofis/megamenu/		app/design/frontend/base/default/template/mageprofis/megamenu/
-src/app/etc/modules/MageProfis_MegaMenu.xml					app/etc/modules/MageProfis_MegaMenu.xml
-src/skin/frontend/base/default/css/mageprofis/megamenu.css			skin/frontend/base/default/css/mageprofis/megamenu.css
-src/skin/frontend/base/default/js/mageprofis/topmenu.js                         skin/frontend/base/default/js/mageprofis/topmenu.js
+src/app/design/frontend/base/default/layout/mageprofis-megamenu.xml		        app/design/frontend/base/default/layout/mageprofis-megamenu.xml
+src/app/design/frontend/base/default/template/mageprofis/megamenu/		        app/design/frontend/base/default/template/mageprofis/megamenu/
+src/app/etc/modules/MageProfis_MegaMenu.xml					                    app/etc/modules/MageProfis_MegaMenu.xml
+src/skin/frontend/base/default/css/mageprofis/megamenu.css			            skin/frontend/base/default/css/mageprofis/megamenu.css

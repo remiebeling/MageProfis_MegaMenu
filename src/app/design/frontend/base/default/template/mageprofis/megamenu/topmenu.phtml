@@ -1,13 +1,10 @@
-<?php $all_categories = $this->getCategories(); ?>
-<?php $main_categories = $this->getCategories()->addAttributeToFilter('level', '2'); ?>
+<?php $main_categories = $this->getCategories(); ?>
 <div class="container menu-container">
     <label id="megamenu-mobile-toggle" for="megamenu-mobile"><?php echo $this->__('Menu'); ?></label>
     <input id="megamenu-mobile" type="checkbox" />
     <ul id="megamenu">
         <?php $i = 0; ?>
-        <?php $cat_count = count($all_categories); ?>
         <?php foreach ($main_categories as $_category): ?>
-            <?php $settings = $this->setParentSettingsArray($_category); ?>
             <li class="level0 level-top <?php if ($_category->getChildrenCount() > 0): ?> parent<?php endif; ?>  <?php echo $this->getCategoryState($_category) ?>" data-id="<?php echo $_category->getId() ?>">
                 <a href="<?php echo $_category->getUrl() ?>">
                     <span><?php echo $_category->getName() ?></span>
@@ -21,18 +18,17 @@
     </ul>
     <script type="text/javascript">
         jQuery(document).ready(function () {
-            jQuery('li.level0').each(function () {
-                var target = jQuery(this).find('.submenu');
-                if (target.is(':empty')) {
-                    jQuery.post("<?php echo Mage::getUrl('dropdown/menu/subcategories') ?>", {id: jQuery(this).attr('data-id')}, function (data) {
-                        jQuery(target).html(data).addClass('has-content');
-                        if (data == "") {
-                            target.hide();
-                        }
-                    });
-                }
+            jQuery.post("<?php echo Mage::getUrl('dropdown/menu/subcategories') ?>", {}, function (data) {
+                var submenu_content = data.evalJSON();
+                
+                jQuery.each(submenu_content.items, function( index, item ) {
+                    var submenu_el = jQuery('#megamenu .level0[data-id='+item.id+']').find('.submenu')
+                    if(submenu_el.length){
+                        submenu_el.html(item.content).addClass('has-content');
+                    }
+                });
             });
-            
+                    
             jQuery( "#megamenu" ).on( "click", ".level0.parent > a", function(e) {
                 if(jQuery("#megamenu-mobile").is(':checked') && jQuery('#megamenu-mobile-toggle').is(':visible')){
                     e.preventDefault();

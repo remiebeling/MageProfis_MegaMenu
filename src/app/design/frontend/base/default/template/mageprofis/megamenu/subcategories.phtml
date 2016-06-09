@@ -8,7 +8,6 @@
                 <?php echo $_parent_category->getName(); ?>
             </a>    
         </div>
-        <?php $subcatcount = count($subcategories); ?>
         <?php foreach ($subcategories as $_subcat): ?>
             <div class="subcat-wrap">
                 <a href="<?php echo $_subcat->getUrl(); ?>" class="submenu-title" title="<?php echo $_subcat->getName(); ?>">

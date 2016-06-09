@@ -16,5 +16,4 @@ Remove the default css file and use "topmenu.less".
 ```
 
 ### To Do
-- Get all Submenus in one request
 - Create some Settings for Menu depth
