@@ -23,7 +23,7 @@ class MageProfis_MegaMenu_Block_Submenu extends Mage_Core_Block_Template
                 ->addAttributeToFilter('include_in_menu', 1)
                 ->addAttributeToSort('position', 'ASC')
                 ->addIsActiveFilter()
-                ->joinUrlRewrite();       
+                ->addUrlRewriteToResult();       
                 
         return $categoryCollection;          
     }
